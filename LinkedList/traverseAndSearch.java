@@ -7,7 +7,7 @@ class traverseAndSearch{
         System.out.println(search(head,6));
 
     }
-    static Node arr2LL(int arr[]){
+    public static Node arr2LL(int arr[]){
         Node head = new Node(arr[0]);
         Node temp = head;
         for(int i=1;i<arr.length;i++){
