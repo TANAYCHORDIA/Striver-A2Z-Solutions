@@ -28,6 +28,27 @@ public class largestRectangle {
         }
         return max;
     }
+    public int largestRectangleAreaOptimised(int[] heights) {
+        Stack<Integer> st = new Stack<>();
+        int max1 = 0;
+        int n = heights.length;
+        for(int i=0;i<n;i++){
+            while(!st.isEmpty() && heights[st.peek()] > heights[i]){
+                int j = st.pop();
+                int pse = st.isEmpty()?-1:st.peek();
+                int area = heights[j]*(i-pse-1);
+                max1 = (max1>area)?max1:area;
+            }
+            st.push(i);
+        }
+        while(!st.isEmpty()){
+            int i = st.pop();
+            int pse = st.isEmpty()?-1:st.peek();
+            int area = heights[i]*(n-pse-1);
+            max1 = (max1>area)?max1:area;
+        }
+        return max1;
+    }
     public static void main(String[] args) {
         int heights[] = {2,1,5,6,2,3};
         System.out.println(largestRectangleArea(heights));
