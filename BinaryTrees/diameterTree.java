@@ -1,7 +1,4 @@
 package BinaryTrees;
-
-import javax.swing.tree.TreeNode;
-
 public class diameterTree {
     static int val = 0;
     public static int diameterOfBinaryTree(Node root) {
