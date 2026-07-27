@@ -14,4 +14,14 @@ public class sortedAndRotatedCheck {
         if (count <= 1) return true;
         else return false;
     }
+    /*Revision-27/07/26-another approach
+    public boolean check(int[] nums) {
+        int peak = 0;
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]>nums[(i+1)%nums.length])peak++;
+        }
+        if(peak<=1)return true;
+        return false;
+    } */
+    
 }
